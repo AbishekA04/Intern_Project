@@ -1,0 +1,131 @@
+
+/* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom, #0f0f1a, #1a1a2e);
+  color: #e0e0e0;
+  scroll-behavior: smooth;
+}
+h1, h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #00f0ff;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #00ffe7;
+  text-align: center;
+  padding: 80px 20px;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #00ffe7; }
+  100% { text-shadow: 0 0 20px #00ffe7, 0 0 30px #00ffe7; }
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar a {
+  color: #0ff;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.navbar a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #00ffe7;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+.navbar a:hover {
+  color: #00ffe7;
+}
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Sections */
+.section {
+  padding: 60px 30px;
+  text-align: center;
+}
+.about, .contact {
+  background: #1f1f2e;
+}
+.projects {
+  background: linear-gradient(to bottom right, #141e30, #243b55);
+}
+
+/* Project Cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+.project-card {
+  background: #2a2a3b;
+  border: 1px solid #00ffe7;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px rgba(0,255,231,0.1);
+}
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0,255,231,0.4);
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .project-card {
+    padding: 15px;
+  }
+}
